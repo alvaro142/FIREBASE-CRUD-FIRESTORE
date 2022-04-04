@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
           <div>
               <h3>${task.title}</h3>
               <p>${task.description}</p>
-              <button class="btn-delete">Delete</button>
+              <button class="btn-delete" data-id="${doc.id}">Delete</button>
           </div>
         `
     })  
@@ -21,7 +21,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const btnsDelete = tasksContainer.querySelectorAll('.btn-delete')
 
-    console.log(btnsDelete)
+    btnsDelete.forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log("Deleting")
+      })
+    })
   })
   
 })
